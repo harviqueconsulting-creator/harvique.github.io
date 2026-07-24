@@ -1,0 +1,853 @@
+/* ==========================================================
+   HARVIQUE WEBSITE
+   Premium Modern CSS
+   Part 1 - Global Styles + Navigation
+========================================================== */
+
+/* ===============================
+   GOOGLE FONT
+=============================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+
+/* ===============================
+   CSS VARIABLES
+=============================== */
+
+:root{
+
+    --primary:#0F2A43;
+    --primary-light:#173F63;
+
+    --secondary:#F5EFE6;
+
+    --white:#ffffff;
+
+    --dark:#202020;
+
+    --gray:#666666;
+
+    --light-gray:#f8f8f8;
+
+    --border:#E4E4E4;
+
+    --shadow:0 12px 35px rgba(0,0,0,.08);
+
+    --radius:18px;
+
+    --transition:.35s ease;
+
+}
+
+
+/* ===============================
+   RESET
+=============================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:var(--secondary);
+
+    color:var(--dark);
+
+    line-height:1.7;
+
+    overflow-x:hidden;
+
+}
+
+
+/* ===============================
+   COMMON
+=============================== */
+
+.container{
+
+    width:min(1180px,90%);
+    margin:auto;
+
+}
+
+section{
+
+    padding:90px 0;
+
+}
+
+img{
+
+    width:100%;
+    display:block;
+
+}
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+
+/* ===============================
+   HEADINGS
+=============================== */
+
+h1{
+
+    font-size:3.8rem;
+
+    line-height:1.15;
+
+    font-weight:700;
+
+    color:var(--primary);
+
+}
+
+h2{
+
+    font-size:2.4rem;
+
+    margin-bottom:18px;
+
+    color:var(--primary);
+
+}
+
+h3{
+
+    font-size:1.35rem;
+
+}
+
+p{
+
+    color:var(--gray);
+
+    font-size:1rem;
+
+}
+
+
+/* ===============================
+   SECTION TITLE
+=============================== */
+
+.section-title{
+
+    text-align:center;
+
+    max-width:760px;
+
+    margin:auto auto 60px;
+
+}
+
+.section-title p{
+
+    margin-top:15px;
+
+}
+
+
+/* ===============================
+   BUTTONS
+=============================== */
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:15px 34px;
+
+    border-radius:50px;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+    box-shadow:var(--shadow);
+
+}
+
+.btn:hover{
+
+    background:var(--primary-light);
+
+    transform:translateY(-4px);
+
+}
+
+.btn-outline{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:15px 34px;
+
+    border-radius:50px;
+
+    border:2px solid var(--primary);
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.btn-outline:hover{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+
+/* ===============================
+   HEADER
+=============================== */
+
+header{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    z-index:999;
+
+    background:rgba(255,255,255,.82);
+
+    backdrop-filter:blur(12px);
+
+    border-bottom:1px solid rgba(0,0,0,.06);
+
+    transition:var(--transition);
+
+}
+
+
+/* When scrolling, JS will add this class */
+
+header.scrolled{
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+
+/* ===============================
+   NAVIGATION
+=============================== */
+
+.nav-container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    height:82px;
+
+}
+
+.logo{
+
+    font-size:1.8rem;
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+    color:var(--primary);
+
+}
+
+.nav-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:35px;
+
+}
+
+.nav-links a{
+
+    font-weight:500;
+
+    position:relative;
+
+    transition:var(--transition);
+
+}
+
+.nav-links a:hover{
+
+    color:var(--primary);
+
+}
+
+
+/* Underline Animation */
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-6px;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--primary);
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover::after{
+
+    width:100%;
+
+}
+
+
+/* ===============================
+   MOBILE MENU BUTTON
+=============================== */
+
+.menu-toggle{
+
+    display:none;
+
+    cursor:pointer;
+
+    font-size:1.8rem;
+
+    color:var(--primary);
+
+}
+
+
+/* ===============================
+   SMALL ANIMATIONS
+=============================== */
+
+.fade-up{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:.8s ease;
+
+}
+
+.fade-up.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+/* ===============================
+   RESPONSIVE
+=============================== */
+
+@media(max-width:992px){
+
+    h1{
+
+        font-size:2.8rem;
+
+    }
+
+    h2{
+
+        font-size:2rem;
+
+    }
+
+    .nav-links{
+
+        gap:20px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .nav-links{
+
+        display:none;
+
+    }
+
+    .menu-toggle{
+
+        display:block;
+
+    }
+
+    .btn{
+
+        padding:13px 26px;
+
+    }
+
+    section{
+
+        padding:70px 0;
+
+    }
+
+}
+
+@media(max-width:500px){
+
+    h1{
+
+        font-size:2.2rem;
+
+    }
+
+    h2{
+
+        font-size:1.7rem;
+
+    }
+
+    .logo{
+
+        font-size:1.5rem;
+
+    }
+
+}
+/* ==========================================================
+   PART 2 - HERO SECTION
+========================================================== */
+
+.hero {
+
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 120px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #F5EFE6 0%, #FFFFFF 100%);
+
+}
+
+/* Decorative Background */
+
+.hero::before {
+
+    content: "";
+    position: absolute;
+    width: 550px;
+    height: 550px;
+    background: rgba(15, 42, 67, 0.06);
+    border-radius: 50%;
+    top: -180px;
+    right: -180px;
+
+}
+
+.hero::after {
+
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: rgba(15, 42, 67, 0.04);
+    border-radius: 50%;
+    bottom: -120px;
+    left: -120px;
+
+}
+
+/* Hero Layout */
+
+.hero-content {
+
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    gap: 70px;
+    position: relative;
+    z-index: 2;
+
+}
+
+/* Left Side */
+
+.hero-text {
+
+    animation: slideLeft 1s ease;
+
+}
+
+.badge {
+
+    display: inline-block;
+
+    background: rgba(15,42,67,.08);
+
+    color: var(--primary);
+
+    padding: 10px 20px;
+
+    border-radius: 50px;
+
+    font-size: .9rem;
+
+    font-weight: 600;
+
+    margin-bottom: 25px;
+
+    letter-spacing: .5px;
+
+}
+
+.hero h1 {
+
+    margin-bottom: 25px;
+
+}
+
+.hero p {
+
+    font-size: 1.08rem;
+
+    margin-bottom: 35px;
+
+    max-width: 560px;
+
+}
+
+.hero-buttons {
+
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+
+}
+
+/* Right Side */
+
+.hero-image {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: float 5s ease-in-out infinite;
+
+}
+
+.hero-image img {
+
+    width: 100%;
+    max-width: 520px;
+
+    border-radius: 25px;
+
+    box-shadow: 0 25px 60px rgba(0,0,0,.12);
+
+}
+
+/* Floating Card */
+
+.hero-image::after {
+
+    content: "✔ Trusted Career & Business Partner";
+
+    position: absolute;
+
+    bottom: 40px;
+
+    right: -20px;
+
+    background: white;
+
+    padding: 16px 22px;
+
+    border-radius: 16px;
+
+    box-shadow: var(--shadow);
+
+    font-size: .95rem;
+
+    font-weight: 600;
+
+    color: var(--primary);
+
+}
+
+/* Scroll Down */
+
+.scroll-down {
+
+    position: absolute;
+
+    bottom: 30px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: var(--primary);
+
+    font-size: .9rem;
+
+    letter-spacing: 1px;
+
+    animation: bounce 2s infinite;
+
+}
+
+/* ===========================
+   ANIMATIONS
+=========================== */
+
+@keyframes float {
+
+    0% {
+
+        transform: translateY(0px);
+
+    }
+
+    50% {
+
+        transform: translateY(-18px);
+
+    }
+
+    100% {
+
+        transform: translateY(0px);
+
+    }
+
+}
+
+@keyframes slideLeft {
+
+    from {
+
+        opacity: 0;
+        transform: translateX(-50px);
+
+    }
+
+    to {
+
+        opacity: 1;
+        transform: translateX(0);
+
+    }
+
+}
+
+@keyframes bounce {
+
+    0% {
+
+        transform: translate(-50%,0);
+
+    }
+
+    50% {
+
+        transform: translate(-50%,10px);
+
+    }
+
+    100% {
+
+        transform: translate(-50%,0);
+
+    }
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width:991px){
+
+.hero-content{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+.hero-text{
+
+order:2;
+
+}
+
+.hero-image{
+
+order:1;
+
+margin-bottom:20px;
+
+}
+
+.hero p{
+
+margin:auto auto 35px;
+
+}
+
+.hero-buttons{
+
+justify-content:center;
+
+}
+
+.hero-image::after{
+
+right:20px;
+
+bottom:20px;
+
+font-size:.85rem;
+
+padding:14px 18px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.hero{
+
+padding-top:110px;
+
+}
+
+.hero-image img{
+
+max-width:360px;
+
+}
+
+.badge{
+
+font-size:.8rem;
+
+}
+
+.hero h1{
+
+font-size:2.5rem;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.hero{
+
+min-height:auto;
+
+padding-bottom:70px;
+
+}
+
+.hero h1{
+
+font-size:2rem;
+
+}
+
+.hero p{
+
+font-size:.95rem;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+}
+
+.hero-buttons a{
+
+width:100%;
+
+}
+
+.hero-image img{
+
+max-width:300px;
+
+}
+
+.hero-image::after{
+
+display:none;
+
+}
+
+}
